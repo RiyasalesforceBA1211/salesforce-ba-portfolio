@@ -1,1029 +1,1428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Riya Wadhwani | Salesforce Business Analyst</title>
-
-    <meta name="description"
-          content="Riya Wadhwani - Salesforce Business Analyst Portfolio">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f9fc;
-            color: #172033;
-            line-height: 1.6;
-        }
-
-        /* NAVBAR */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,0.96);
-            border-bottom: 1px solid #e5e7eb;
-            padding: 16px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: #1264a3;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #374151;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: #1264a3;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            padding: 70px 8%;
-            background: linear-gradient(135deg, #eef7ff, #ffffff);
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 30px;
-            background: #e1f0ff;
-            color: #1264a3;
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 72px);
-            line-height: 1.05;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 span {
-            color: #1264a3;
-        }
-
-        .hero h2 {
-            font-size: 25px;
-            font-weight: 500;
-            color: #4b5563;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            max-width: 720px;
-            font-size: 18px;
-            color: #5b6472;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 13px 23px;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: 0.2s;
-        }
-
-        .btn-primary {
-            background: #1264a3;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #0b4d7c;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #1264a3;
-            border: 1px solid #1264a3;
-        }
-
-        .btn-secondary:hover {
-            background: #eef7ff;
-        }
-
-        /* GENERAL */
-        section {
-            padding: 85px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #6b7280;
-        }
-
-        /* ABOUT */
-        .about {
-            max-width: 950px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about p {
-            font-size: 17px;
-            color: #596273;
-            margin-bottom: 15px;
-        }
-
-        /* SKILLS */
-        .skills-grid {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 28px;
-            border-radius: 14px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-        }
-
-        .skill-card h3 {
-            color: #1264a3;
-            margin-bottom: 16px;
-            font-size: 20px;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-        }
-
-        .skill {
-            padding: 7px 11px;
-            background: #f1f5f9;
-            border-radius: 6px;
-            font-size: 13px;
-            color: #374151;
-        }
-
-        /* EXPERIENCE */
-        .experience-container {
-            max-width: 950px;
-            margin: auto;
-        }
-
-        .experience-card {
-            background: white;
-            padding: 35px;
-            border-radius: 14px;
-            border-left: 5px solid #1264a3;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-        }
-
-        .experience-card h3 {
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
-
-        .company {
-            color: #1264a3;
-            font-weight: 700;
-            font-size: 17px;
-        }
-
-        .date {
-            color: #6b7280;
-            font-size: 14px;
-            margin: 5px 0 20px;
-        }
-
-        .experience-card ul {
-            padding-left: 20px;
-        }
-
-        .experience-card li {
-            margin-bottom: 10px;
-            color: #4b5563;
-        }
-
-        /* PROJECTS */
-        .projects-grid {
-            max-width: 1150px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .project-card {
-            background: white;
-            padding: 30px;
-            border-radius: 14px;
-            border: 1px solid #e5e7eb;
-            transition: 0.25s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-        }
-
-        .project-number {
-            color: #1264a3;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .project-card h3 {
-            font-size: 23px;
-            margin: 10px 0 12px;
-        }
-
-        .project-card p {
-            color: #5b6472;
-            margin-bottom: 16px;
-        }
-
-        .project-card strong {
-            color: #172033;
-        }
-
-        /* BA PROCESS */
-        .process {
-            background: #eef7ff;
-        }
-
-        .process-grid {
-            max-width: 1050px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-        }
-
-        .process-step {
-            background: white;
-            padding: 22px 15px;
-            text-align: center;
-            border-radius: 12px;
-            border: 1px solid #dbeafe;
-        }
-
-        .process-step span {
-            display: block;
-            font-size: 26px;
-            font-weight: 700;
-            color: #1264a3;
-            margin-bottom: 8px;
-        }
-
-        .process-step h4 {
-            font-size: 15px;
-        }
-
-        /* DOCUMENTATION */
-        .docs-grid {
-            max-width: 900px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .doc-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .doc-card h3 {
-            color: #1264a3;
-            margin-bottom: 8px;
-        }
-
-        .doc-card p {
-            color: #5b6472;
-            font-size: 15px;
-        }
-
-        /* CONTACT */
-        .contact {
-            background: #172033;
-            color: white;
-            text-align: center;
-        }
-
-        .contact .section-title h2 {
-            color: white;
-        }
-
-        .contact .section-title p {
-            color: #cbd5e1;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-top: 30px;
-        }
-
-        .contact-info a {
-            text-decoration: none;
-            color: white;
-            border: 1px solid #64748b;
-            padding: 12px 20px;
-            border-radius: 8px;
-        }
-
-        .contact-info a:hover {
-            background: #1264a3;
-            border-color: #1264a3;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #111827;
-            color: #9ca3af;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            section {
-                padding: 65px 6%;
-            }
-
-            .skills-grid,
-            .projects-grid,
-            .docs-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 60px 6%;
-            }
-
-            .hero h1 {
-                font-size: 45px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Riya Wadhwani | Salesforce Business Analyst & Consultant</title>
+
+<meta name="description"
+content="Salesforce Business Analyst and Consultant portfolio showcasing business analysis, Salesforce CRM, requirements gathering, documentation and solution understanding.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:#f6f9fc;
+    color:#172033;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1180px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e6ebf2;
+}
+
+.navbar{
+    height:72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    color:#0b63ce;
+}
+
+.logo span{
+    color:#172033;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    color:#4b5565;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#0b63ce;
+}
+
+/* HERO */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 85% 20%,rgba(35,126,255,.18),transparent 28%),
+    radial-gradient(circle at 10% 80%,rgba(100,170,255,.12),transparent 30%),
+    #f7faff;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:70px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:30px;
+    background:#e7f1ff;
+    color:#0865cf;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.08;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#0865cf;
+}
+
+.hero-subtitle{
+    font-size:21px;
+    font-weight:600;
+    color:#445168;
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:650px;
+    color:#647086;
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:32px;
+}
+
+.btn{
+    padding:13px 23px;
+    border-radius:9px;
+    font-weight:700;
+    font-size:14px;
+    display:inline-block;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#0865cf;
+    color:white;
+    box-shadow:0 10px 25px rgba(8,101,207,.2);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    background:white;
+    color:#0865cf;
+    border:1px solid #d6e2f0;
+}
+
+.btn-secondary:hover{
+    border-color:#0865cf;
+}
+
+/* HERO CARD */
+
+.profile-card{
+    background:white;
+    padding:32px;
+    border-radius:24px;
+    box-shadow:0 25px 70px rgba(27,67,108,.12);
+    border:1px solid #e7edf5;
+    position:relative;
+}
+
+.profile-top{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.avatar{
+    width:70px;
+    height:70px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#0865cf,#42a5ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:25px;
+    font-weight:800;
+}
+
+.profile-card h3{
+    font-size:20px;
+}
+
+.profile-card small{
+    color:#718096;
+}
+
+.profile-line{
+    height:1px;
+    background:#edf1f6;
+    margin:20px 0;
+}
+
+.quick-item{
+    display:flex;
+    justify-content:space-between;
+    margin:13px 0;
+    font-size:14px;
+}
+
+.quick-item span:first-child{
+    color:#7a8597;
+}
+
+.quick-item span:last-child{
+    font-weight:700;
+}
+
+/* SECTION */
+
+section{
+    padding:95px 0;
+}
+
+.section-label{
+    color:#0865cf;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-size:38px;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.section-description{
+    color:#687589;
+    max-width:680px;
+    margin-bottom:45px;
+}
+
+/* STATS */
+
+.stats{
+    margin-top:-45px;
+    position:relative;
+    z-index:5;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:white;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(27,67,108,.10);
+    overflow:hidden;
+    border:1px solid #e7edf5;
+}
+
+.stat{
+    padding:30px;
+    text-align:center;
+    border-right:1px solid #edf1f6;
+}
+
+.stat:last-child{
+    border-right:none;
+}
+
+.stat h3{
+    font-size:28px;
+    color:#0865cf;
+}
+
+.stat p{
+    color:#718096;
+    font-size:13px;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid #e5ebf3;
+    box-shadow:0 15px 45px rgba(27,67,108,.07);
+}
+
+.about-box h3{
+    margin-bottom:15px;
+}
+
+.about-box p{
+    color:#687589;
+    margin-bottom:15px;
+}
+
+.highlight{
+    color:#0865cf;
+    font-weight:700;
+}
+
+/* WORKFLOW */
+
+.workflow{
+    background:#0d1b2f;
+    color:white;
+}
+
+.workflow .section-description{
+    color:#aebbd0;
+}
+
+.workflow-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.workflow-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    padding:25px 18px;
+    border-radius:16px;
+    text-align:center;
+}
+
+.workflow-number{
+    width:42px;
+    height:42px;
+    margin:auto auto 15px;
+    border-radius:50%;
+    background:#1675df;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+}
+
+.workflow-card h4{
+    margin-bottom:8px;
+}
+
+.workflow-card p{
+    color:#aebbd0;
+    font-size:13px;
+}
+
+/* EXPERIENCE */
+
+.timeline{
+    border-left:2px solid #d9e5f2;
+    padding-left:35px;
+    margin-top:35px;
+}
+
+.timeline-item{
+    position:relative;
+    background:white;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:17px;
+    border:1px solid #e4eaf2;
+    box-shadow:0 12px 35px rgba(27,67,108,.06);
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    width:13px;
+    height:13px;
+    background:#0865cf;
+    border-radius:50%;
+    left:-43px;
+    top:35px;
+    border:4px solid #f6f9fc;
+}
+
+.timeline-date{
+    color:#0865cf;
+    font-size:13px;
+    font-weight:800;
+}
+
+.timeline-item h3{
+    margin:6px 0;
+}
+
+.timeline-item p{
+    color:#687589;
+}
+
+.timeline-list{
+    margin-top:18px;
+    padding-left:20px;
+    color:#59677b;
+}
+
+.timeline-list li{
+    margin:7px 0;
+}
+
+/* SKILLS */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.skill-card{
+    background:white;
+    border:1px solid #e3eaf3;
+    border-radius:18px;
+    padding:28px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 45px rgba(27,67,108,.09);
+}
+
+.skill-icon{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.skill-card h3{
+    margin-bottom:15px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.tag{
+    background:#eef4fa;
+    padding:7px 11px;
+    border-radius:7px;
+    font-size:12px;
+    color:#38506d;
+}
+
+/* PROJECTS */
+
+.projects{
+    background:#eef4fa;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.project{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    border:1px solid #dfe7f1;
+    position:relative;
+    overflow:hidden;
+}
+
+.project:after{
+    content:"";
+    position:absolute;
+    width:110px;
+    height:110px;
+    background:#e9f3ff;
+    border-radius:50%;
+    right:-40px;
+    top:-40px;
+}
+
+.project-number{
+    color:#0865cf;
+    font-weight:800;
+    font-size:13px;
+}
+
+.project h3{
+    margin:8px 0 12px;
+    font-size:21px;
+}
+
+.project p{
+    color:#687589;
+    font-size:14px;
+}
+
+.project .tags{
+    margin-top:20px;
+}
+
+/* DOCUMENTATION */
+
+.docs-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.doc-card{
+    background:white;
+    padding:28px;
+    border-radius:17px;
+    border:1px solid #e4eaf2;
+}
+
+.doc-card h3{
+    margin-bottom:10px;
+}
+
+.doc-card p{
+    color:#6c788a;
+    font-size:14px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:linear-gradient(135deg,#0865cf,#174f9e);
+    color:white;
+}
+
+.contact-box{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+}
+
+.contact .section-label{
+    color:#bcdcff;
+}
+
+.contact h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    color:#d7e8ff;
+    margin-bottom:28px;
+}
+
+.contact .btn{
+    background:white;
+    color:#0865cf;
+}
+
+/* FOOTER */
+
+footer{
+    background:#091321;
+    color:#8795a9;
+    padding:25px 0;
+    text-align:center;
+    font-size:13px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:80px 0;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .workflow-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .skills-grid,
+    .docs-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .stats-grid,
+    .skills-grid,
+    .docs-grid,
+    .project-grid,
+    .workflow-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
-<nav>
-    <div class="logo">RW</div>
 
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#process">BA Approach</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<nav>
+<div class="container navbar">
+
+<div class="logo">
+Riya<span>.</span>
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#documentation">Documentation</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
 </nav>
 
 
 <!-- HERO -->
+
 <header class="hero">
 
-    <div class="hero-content">
+<div class="container hero-grid">
 
-        <div class="tag">SALESFORCE BUSINESS ANALYST</div>
+<div>
 
-        <h1>
-            Hi, I'm <span>Riya Wadhwani</span>
-        </h1>
+<div class="badge">
+SALESFORCE BUSINESS ANALYST • CONSULTANT
+</div>
 
-        <h2>
-            Salesforce Business Analyst | CRM | Business Requirements
-        </h2>
+<h1>
+Turning business requirements into
+<span>Salesforce solutions.</span>
+</h1>
 
-        <p>
-            Salesforce Business Analyst with around a year of experience
-            in requirement gathering, discovery calls, business analysis,
-            BRD/FRD documentation, Salesforce solutions and demo preparation.
-        </p>
+<div class="hero-subtitle">
+Salesforce Business Analyst | Salesforce Consultant
+</div>
 
-        <div class="buttons">
+<p>
+Business-focused Salesforce professional with experience in
+requirement gathering, discovery calls, business analysis,
+Salesforce CRM processes, documentation, solution understanding
+and stakeholder communication.
+</p>
 
-            <a href="#projects" class="btn btn-primary">
-                View My Projects
-            </a>
+<div class="hero-buttons">
 
-            <a href="#contact" class="btn btn-secondary">
-                Contact Me
-            </a>
+<a class="btn btn-primary" href="#projects">
+View My Work →
+</a>
 
-        </div>
+<a class="btn btn-secondary" href="#contact">
+Let's Connect
+</a>
 
-    </div>
+</div>
+
+</div>
+
+
+<div class="profile-card">
+
+<div class="profile-top">
+
+<div class="avatar">
+RW
+</div>
+
+<div>
+<h3>Riya Wadhwani</h3>
+<small>Salesforce Business Analyst</small>
+</div>
+
+</div>
+
+<div class="profile-line"></div>
+
+<div class="quick-item">
+<span>Primary Role</span>
+<span>Salesforce BA</span>
+</div>
+
+<div class="quick-item">
+<span>Focus</span>
+<span>CRM & Business Analysis</span>
+</div>
+
+<div class="quick-item">
+<span>Experience</span>
+<span>~1 Year</span>
+</div>
+
+<div class="quick-item">
+<span>Strength</span>
+<span>Requirements & Solutions</span>
+</div>
+
+</div>
+
+</div>
 
 </header>
 
 
-<!-- ABOUT -->
-<section id="about">
+<!-- STATS -->
 
-    <div class="section-title">
-        <h2>About Me</h2>
-        <p>Understanding business needs and translating them into Salesforce solutions.</p>
-    </div>
+<section class="stats">
 
-    <div class="about">
+<div class="container">
 
-        <p>
-            I am a Salesforce Business Analyst with practical experience
-            working on CRM-related business requirements and Salesforce
-            solutions.
-        </p>
+<div class="stats-grid">
 
-        <p>
-            My experience includes participating in discovery calls,
-            gathering and analysing requirements, preparing BRD and FRD
-            documentation, supporting Salesforce demos and understanding
-            business processes across different Salesforce products.
-        </p>
+<div class="stat">
+<h3>~1</h3>
+<p>Year Experience</p>
+</div>
 
-        <p>
-            I enjoy working between business stakeholders and Salesforce
-            solutions, ensuring that business requirements are clearly
-            understood and effectively translated into practical CRM
-            solutions.
-        </p>
+<div class="stat">
+<h3>CRM</h3>
+<p>Salesforce Focus</p>
+</div>
 
-    </div>
+<div class="stat">
+<h3>BA</h3>
+<p>Business Analysis</p>
+</div>
+
+<div class="stat">
+<h3>360°</h3>
+<p>Business Perspective</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- SKILLS -->
-<section id="skills">
+<!-- ABOUT -->
 
-    <div class="section-title">
-        <h2>Skills & Expertise</h2>
-        <p>My Salesforce and Business Analysis skill set</p>
-    </div>
+<section id="about">
 
-    <div class="skills-grid">
+<div class="container">
 
-        <div class="skill-card">
+<div class="section-label">About Me</div>
 
-            <h3>Business Analysis</h3>
+<h2 class="section-title">
+Business analysis meets Salesforce.
+</h2>
 
-            <div class="skill-list">
-                <span class="skill">Requirement Gathering</span>
-                <span class="skill">Discovery Calls</span>
-                <span class="skill">Business Analysis</span>
-                <span class="skill">BRD</span>
-                <span class="skill">FRD</span>
-                <span class="skill">Process Understanding</span>
-                <span class="skill">Stakeholder Communication</span>
-                <span class="skill">Demo Preparation</span>
-            </div>
-
-        </div>
+<p class="section-description">
+I work at the intersection of business requirements and Salesforce
+solutions — understanding what the business needs and translating
+those needs into clear, practical CRM solutions.
+</p>
 
 
-        <div class="skill-card">
+<div class="about-grid">
 
-            <h3>Salesforce</h3>
+<div>
 
-            <div class="skill-list">
-                <span class="skill">Sales Cloud</span>
-                <span class="skill">Experience Cloud</span>
-                <span class="skill">Education Cloud</span>
-                <span class="skill">Health Cloud</span>
-                <span class="skill">Marketing Cloud</span>
-                <span class="skill">Salesforce Admin</span>
-                <span class="skill">Flows</span>
-                <span class="skill">Reports & Dashboards</span>
-            </div>
+<h3>My approach</h3>
 
-        </div>
+<p style="color:#687589;margin-top:15px;">
+I focus on understanding the business problem first, asking the
+right questions, documenting requirements clearly and working
+towards solutions that are practical for users and stakeholders.
+</p>
+
+<p style="color:#687589;margin-top:15px;">
+My experience includes <span class="highlight">
+discovery calls, requirement gathering, documentation,
+demo preparation, Salesforce configuration understanding
+and stakeholder communication.
+</span>
+</p>
+
+</div>
 
 
-        <div class="skill-card">
+<div class="about-box">
 
-            <h3>Other Skills</h3>
+<h3>What I bring to a project</h3>
 
-            <div class="skill-list">
-                <span class="skill">Power BI</span>
-                <span class="skill">DAX</span>
-                <span class="skill">Advanced Excel</span>
-                <span class="skill">SQL</span>
-                <span class="skill">HTML</span>
-                <span class="skill">CSS</span>
-                <span class="skill">Basic Python</span>
-                <span class="skill">Trailhead</span>
-            </div>
+<p>✓ Business requirement understanding</p>
+<p>✓ Salesforce CRM knowledge</p>
+<p>✓ Clear documentation</p>
+<p>✓ Stakeholder communication</p>
+<p>✓ Process understanding</p>
+<p>✓ Solution-oriented thinking</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WORKFLOW -->
+
+<section class="workflow">
+
+<div class="container">
+
+<div class="section-label">My BA Approach</div>
+
+<h2 class="section-title">
+From business problem to Salesforce solution.
+</h2>
+
+<p class="section-description">
+A structured approach to understanding requirements and
+supporting Salesforce-based business solutions.
+</p>
+
+
+<div class="workflow-grid">
+
+<div class="workflow-card">
+<div class="workflow-number">01</div>
+<h4>Discover</h4>
+<p>Understand the business problem and objectives.</p>
+</div>
+
+<div class="workflow-card">
+<div class="workflow-number">02</div>
+<h4>Gather</h4>
+<p>Collect requirements through discussions and calls.</p>
+</div>
+
+<div class="workflow-card">
+<div class="workflow-number">03</div>
+<h4>Document</h4>
+<p>Capture requirements, processes and solution details.</p>
+</div>
+
+<div class="workflow-card">
+<div class="workflow-number">04</div>
+<h4>Analyse</h4>
+<p>Evaluate business needs and Salesforce capabilities.</p>
+</div>
+
+<div class="workflow-card">
+<div class="workflow-number">05</div>
+<h4>Support</h4>
+<p>Assist with demos, validation and business communication.</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- EXPERIENCE -->
+
 <section id="experience">
 
-    <div class="section-title">
-        <h2>Professional Experience</h2>
-        <p>My Salesforce Business Analyst experience</p>
-    </div>
+<div class="container">
 
-    <div class="experience-container">
+<div class="section-label">Experience</div>
 
-        <div class="experience-card">
+<h2 class="section-title">
+Professional Experience
+</h2>
 
-            <h3>Salesforce Business Analyst</h3>
+<p class="section-description">
+Experience working in Salesforce-focused business analysis
+and CRM environments.
+</p>
 
-            <div class="company">
-                iBirds Software Services
-            </div>
 
-            <div class="date">
-                July 2025 – April 2026
-            </div>
+<div class="timeline">
 
-            <ul>
+<div class="timeline-item">
 
-                <li>
-                    Participated in discovery calls and discussions
-                    to understand business requirements.
-                </li>
+<div class="timeline-date">
+JUL 2025 — APR 2026
+</div>
 
-                <li>
-                    Gathered, analysed and documented business and
-                    functional requirements.
-                </li>
+<h3>Salesforce Business Analyst</h3>
 
-                <li>
-                    Prepared BRD and FRD documentation based on
-                    gathered requirements.
-                </li>
+<p>
+iBirds Software Services
+</p>
 
-                <li>
-                    Worked with Salesforce CRM-related requirements
-                    and business processes.
-                </li>
+<ul class="timeline-list">
 
-                <li>
-                    Prepared Salesforce demos based on business
-                    requirements and use cases.
-                </li>
+<li>Participated in discovery calls and requirement gathering.</li>
 
-                <li>
-                    Worked with Salesforce features including
-                    Flows, Reports & Dashboards, Record Types and
-                    Salesforce security concepts.
-                </li>
+<li>Worked on understanding and documenting business requirements.</li>
 
-                <li>
-                    Worked across Salesforce products and explored
-                    solutions involving Sales Cloud, Experience Cloud,
-                    Education Cloud, Health Cloud and Marketing Cloud.
-                </li>
+<li>Prepared BRD/FRD and other business analysis documentation.</li>
 
-                <li>
-                    Created email templates and Journeys in
-                    Salesforce Marketing Cloud.
-                </li>
+<li>Supported demo preparation and solution discussions.</li>
 
-                <li>
-                    Supported CRM and portal-related requirements
-                    and business process discussions.
-                </li>
+<li>Worked with Salesforce CRM processes and configuration concepts.</li>
 
-            </ul>
+<li>Created email templates and Journeys in Marketing Cloud.</li>
 
-        </div>
+<li>Worked on order form creation and related business processes.</li>
 
-    </div>
+<li>Handled production-related calls and supported business communication.</li>
+
+<li>Worked with Salesforce Admin concepts including Flows,
+Reports, Dashboards, Validation Rules and Approval Processes.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-label">Capabilities</div>
+
+<h2 class="section-title">
+Skills & Salesforce Expertise
+</h2>
+
+<p class="section-description">
+A combination of business analysis skills and Salesforce
+functional knowledge.
+</p>
+
+
+<div class="skills-grid">
+
+
+<div class="skill-card">
+
+<div class="skill-icon">📊</div>
+
+<h3>Business Analysis</h3>
+
+<div class="tags">
+
+<span class="tag">Requirement Gathering</span>
+<span class="tag">Discovery Calls</span>
+<span class="tag">Business Analysis</span>
+<span class="tag">BRD</span>
+<span class="tag">FRD</span>
+<span class="tag">Process Understanding</span>
+<span class="tag">Stakeholder Communication</span>
+<span class="tag">Demo Preparation</span>
+
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">☁️</div>
+
+<h3>Salesforce CRM</h3>
+
+<div class="tags">
+
+<span class="tag">Sales Cloud</span>
+<span class="tag">Marketing Cloud</span>
+<span class="tag">Salesforce Admin</span>
+<span class="tag">Flows</span>
+<span class="tag">Reports & Dashboards</span>
+<span class="tag">AppExchange</span>
+
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">🔐</div>
+
+<h3>Salesforce Configuration</h3>
+
+<div class="tags">
+
+<span class="tag">Approval Process</span>
+<span class="tag">Validation Rules</span>
+<span class="tag">Security Model</span>
+<span class="tag">Profiles</span>
+<span class="tag">Permission Sets</span>
+<span class="tag">Roles</span>
+<span class="tag">Sharing Rules</span>
+
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">⚙️</div>
+
+<h3>Salesforce Processes</h3>
+
+<div class="tags">
+
+<span class="tag">Web-to-Lead</span>
+<span class="tag">Lead Management</span>
+<span class="tag">Order Forms</span>
+<span class="tag">Approval Workflows</span>
+<span class="tag">Production Support</span>
+
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">📈</div>
+
+<h3>Data & Reporting</h3>
+
+<div class="tags">
+
+<span class="tag">Power BI</span>
+<span class="tag">DAX</span>
+<span class="tag">Advanced Excel</span>
+<span class="tag">SQL</span>
+<span class="tag">Reports</span>
+<span class="tag">Dashboards</span>
+
+</div>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">💻</div>
+
+<h3>Technical Understanding</h3>
+
+<div class="tags">
+
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+<span class="tag">Basic Python</span>
+<span class="tag">LWC</span>
+<span class="tag">SOQL</span>
+<span class="tag">Trailhead</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- PROJECTS -->
-<section id="projects">
 
-    <div class="section-title">
-        <h2>Projects & Case Studies</h2>
-        <p>Salesforce business solutions and CRM use cases</p>
-    </div>
+<section class="projects" id="projects">
 
+<div class="container">
 
-    <div class="projects-grid">
+<div class="section-label">Selected Work</div>
 
+<h2 class="section-title">
+Salesforce Projects & Work Areas
+</h2>
 
-        <!-- PROJECT 1 -->
-        <div class="project-card">
+<p class="section-description">
+Examples of Salesforce-related work, processes and solution
+areas I have worked with or explored.
+</p>
 
-            <div class="project-number">
-                PROJECT 01
-            </div>
 
-            <h3>Education CRM</h3>
+<div class="project-grid">
 
-            <p>
-                A Salesforce-based CRM solution designed around
-                education-related business processes and stakeholder
-                requirements.
-            </p>
 
-            <p>
-                <strong>Business Analysis:</strong>
-                Requirement understanding, process analysis and
-                Salesforce solution mapping.
-            </p>
+<div class="project">
 
-            <p>
-                <strong>Salesforce:</strong>
-                Education Cloud, Salesforce CRM, Record Types,
-                Flows, Reports and Dashboards.
-            </p>
+<div class="project-number">01 / BUSINESS PROCESS</div>
 
-            <p>
-                <strong>Stakeholders:</strong>
-                Student, Parent and Staff personas.
-            </p>
+<h3>Order Form Creation</h3>
 
-        </div>
+<p>
+Worked with order form creation and understanding the business
+information required to support order-related processes.
+</p>
 
+<div class="tags">
+<span class="tag">Order Management</span>
+<span class="tag">Business Analysis</span>
+<span class="tag">Documentation</span>
+</div>
 
-        <!-- PROJECT 2 -->
-        <div class="project-card">
+</div>
 
-            <div class="project-number">
-                PROJECT 02
-            </div>
 
-            <h3>Salesforce CRM</h3>
+<div class="project">
 
-            <p>
-                CRM solution focused on managing business processes,
-                records and sales-related information within Salesforce.
-            </p>
+<div class="project-number">02 / SALESFORCE</div>
 
-            <p>
-                <strong>Business Analysis:</strong>
-                Requirement gathering, documentation and
-                solution discussions.
-            </p>
+<h3>Approval Process</h3>
 
-            <p>
-                <strong>Salesforce:</strong>
-                Sales Cloud, Reports & Dashboards, Flows,
-                Record Types and automation concepts.
-            </p>
+<p>
+Understanding and working with Salesforce Approval Processes
+to route business records through appropriate approval steps.
+</p>
 
-        </div>
+<div class="tags">
+<span class="tag">Approval Process</span>
+<span class="tag">Business Rules</span>
+<span class="tag">Salesforce</span>
+</div>
 
+</div>
 
-        <!-- PROJECT 3 -->
-        <div class="project-card">
 
-            <div class="project-number">
-                PROJECT 03
-            </div>
+<div class="project">
 
-            <h3>Experience Cloud Portal</h3>
+<div class="project-number">03 / DATA CAPTURE</div>
 
-            <p>
-                Experience Cloud portal use cases designed around
-                different stakeholder requirements and access needs.
-            </p>
+<h3>Web-to-Lead Forms</h3>
 
-            <p>
-                <strong>Business Analysis:</strong>
-                Understanding stakeholder requirements and
-                portal-related business processes.
-            </p>
+<p>
+Worked with the concept of capturing website enquiries as
+Salesforce Leads through Web-to-Lead functionality.
+</p>
 
-            <p>
-                <strong>Salesforce:</strong>
-                Experience Cloud, Record Types, Profiles,
-                Permission Sets and access concepts.
-            </p>
+<div class="tags">
+<span class="tag">Web-to-Lead</span>
+<span class="tag">Lead Management</span>
+<span class="tag">Sales Cloud</span>
+</div>
 
-        </div>
+</div>
 
 
-        <!-- PROJECT 4 -->
-        <div class="project-card">
+<div class="project">
 
-            <div class="project-number">
-                PROJECT 04
-            </div>
+<div class="project-number">04 / DATA QUALITY</div>
 
-            <h3>Marketing Cloud Journey</h3>
+<h3>Validation Rules</h3>
 
-            <p>
-                Marketing communication use case involving email
-                templates and customer/student communication journeys.
-            </p>
+<p>
+Understanding business validation requirements and how
+Salesforce Validation Rules can prevent incorrect or incomplete
+data from being saved.
+</p>
 
-            <p>
-                <strong>My Contribution:</strong>
-                Email template creation and Journey configuration
-                based on the required communication flow.
-            </p>
+<div class="tags">
+<span class="tag">Validation Rules</span>
+<span class="tag">Data Quality</span>
+</div>
 
-            <p>
-                <strong>Salesforce:</strong>
-                Marketing Cloud, Email Templates and Journeys.
-            </p>
+</div>
 
-        </div>
 
+<div class="project">
 
-        <!-- PROJECT 5 -->
-        <div class="project-card">
+<div class="project-number">05 / SECURITY</div>
 
-            <div class="project-number">
-                PROJECT 05
-            </div>
+<h3>Salesforce Security Model</h3>
 
-            <h3>Healthcare CRM Use Case</h3>
+<p>
+Functional understanding of Salesforce security including
+Profiles, Roles, Permission Sets, Sharing Rules and record access.
+</p>
 
-            <p>
-                Salesforce Health Cloud-related business and CRM
-                use case focused on understanding healthcare processes
-                and Salesforce capabilities.
-            </p>
+<div class="tags">
+<span class="tag">Security Model</span>
+<span class="tag">Profiles</span>
+<span class="tag">Permission Sets</span>
+<span class="tag">Sharing Rules</span>
+</div>
 
-            <p>
-                <strong>My Contribution:</strong>
-                Business process understanding, Salesforce solution
-                analysis and agent testing-related activities.
-            </p>
+</div>
 
-            <p>
-                <strong>Salesforce:</strong>
-                Health Cloud and Salesforce CRM.
-            </p>
 
-        </div>
+<div class="project">
 
+<div class="project-number">06 / CRM SUPPORT</div>
 
-        <!-- PROJECT 6 -->
-        <div class="project-card">
+<h3>Production Calls & Business Support</h3>
 
-            <div class="project-number">
-                PROJECT 06
-            </div>
+<p>
+Handled business discussions and production-related calls,
+helping understand issues, requirements and business context.
+</p>
 
-            <h3>Salesforce Automation</h3>
+<div class="tags">
+<span class="tag">Production Support</span>
+<span class="tag">Business Communication</span>
+<span class="tag">CRM</span>
+</div>
 
-            <p>
-                Business automation scenarios using Salesforce
-                Flow and other platform capabilities.
-            </p>
+</div>
 
-            <p>
-                <strong>Focus:</strong>
-                Understanding business requirements and identifying
-                suitable Salesforce automation capabilities.
-            </p>
 
-            <p>
-                <strong>Salesforce:</strong>
-                Screen Flow, Record-Triggered Flow,
-                Scheduled-Triggered Flow and Auto-Launched Flow.
-            </p>
+</div>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- BA APPROACH -->
-<section id="process" class="process">
-
-    <div class="section-title">
-
-        <h2>My Business Analysis Approach</h2>
-
-        <p>
-            How I approach Salesforce business requirements
-        </p>
-
-    </div>
-
-
-    <div class="process-grid">
-
-        <div class="process-step">
-            <span>01</span>
-            <h4>Understand the Business Need</h4>
-        </div>
-
-        <div class="process-step">
-            <span>02</span>
-            <h4>Gather Requirements</h4>
-        </div>
-
-        <div class="process-step">
-            <span>03</span>
-            <h4>Analyse & Document</h4>
-        </div>
-
-        <div class="process-step">
-            <span>04</span>
-            <h4>Map Salesforce Solution</h4>
-        </div>
-
-        <div class="process-step">
-            <span>05</span>
-            <h4>Validate the Solution</h4>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- DOCUMENTATION -->
-<section>
 
-    <div class="section-title">
+<section id="documentation">
 
-        <h2>Business Analysis Documentation</h2>
+<div class="container">
 
-        <p>
-            Examples of documentation and analysis deliverables
-        </p>
+<div class="section-label">Documentation</div>
 
-    </div>
+<h2 class="section-title">
+Business Analysis Documentation
+</h2>
 
-
-    <div class="docs-grid">
-
-        <div class="doc-card">
-
-            <h3>BRD</h3>
-
-            <p>
-                Business Requirement Document covering business
-                objectives, requirements, scope, assumptions and
-                business processes.
-            </p>
-
-        </div>
+<p class="section-description">
+Examples of documentation and analysis areas relevant to my
+Salesforce Business Analyst work.
+</p>
 
 
-        <div class="doc-card">
+<div class="docs-grid">
 
-            <h3>FRD</h3>
+<div class="doc-card">
 
-            <p>
-                Functional Requirement Document translating
-                business requirements into functional Salesforce
-                requirements.
-            </p>
+<h3>BRD</h3>
 
-        </div>
+<p>
+Business Requirement Documents covering business objectives,
+requirements, scope and process understanding.
+</p>
 
-
-        <div class="doc-card">
-
-            <h3>Requirement Analysis</h3>
-
-            <p>
-                Analysis of business requirements and mapping them
-                to suitable Salesforce functionality.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="doc-card">
+<div class="doc-card">
 
-            <h3>Demo Preparation</h3>
+<h3>FRD</h3>
 
-            <p>
-                Preparing Salesforce demos around business
-                requirements and practical CRM use cases.
-            </p>
+<p>
+Functional Requirement Documents translating business needs
+into functional Salesforce requirements.
+</p>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="doc-card">
+
+<h3>Requirement Analysis</h3>
+
+<p>
+Breaking down business requirements, identifying process
+needs and understanding potential Salesforce solutions.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>Process Understanding</h3>
+
+<p>
+Mapping business processes and understanding how CRM
+functionality can support business operations.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>Demo Preparation</h3>
+
+<p>
+Preparing business-focused demonstrations based on
+requirements and Salesforce functionality.
+</p>
+
+</div>
+
+
+<div class="doc-card">
+
+<h3>Stakeholder Communication</h3>
+
+<p>
+Communicating requirements, clarifying business needs and
+supporting discussions between business and technical teams.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
 
-    <div class="section-title">
+<section class="contact" id="contact">
 
-        <h2>Let's Connect</h2>
+<div class="container">
 
-        <p>
-            I'm open to opportunities as a Salesforce Business Analyst.
-        </p>
+<div class="contact-box">
 
-    </div>
+<div class="section-label">
+Let's Connect
+</div>
 
+<h2>
+Looking for a Salesforce BA / Consultant?
+</h2>
 
-    <div class="contact-info">
+<p>
+I'm open to opportunities where I can contribute my Salesforce
+knowledge, business analysis skills and requirement understanding.
+</p>
 
-        <!-- Replace these links with your actual links -->
+<a class="btn" href="mailto:your-email@example.com">
+Contact Me →
+</a>
 
-        <a href="mailto:your-email@example.com">
-            Email Me
-        </a>
+</div>
 
-        <a href="https://www.linkedin.com/" target="_blank">
-            LinkedIn
-        </a>
-
-        <a href="#" target="_blank">
-            Resume
-        </a>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- FOOTER -->
+
 <footer>
 
-    © 2026 Riya Wadhwani · Salesforce Business Analyst
+<div class="container">
+
+© 2026 Riya Wadhwani · Salesforce Business Analyst & Consultant
+
+</div>
 
 </footer>
-
 
 </body>
 </html>
